@@ -9,17 +9,17 @@ public class SimulationManager : MonoBehaviour
     public Text fps;
     public Toggle touch;
     public bool canReposition = false;
-    Vector3 worldPosition;
-    Plane plane;
-    float distance;
+    public BoxCollider plane;
+    //float distance;
     Ray ray;
+    RaycastHit raycastHit;
 
     public void Awake(){
         material.SetFloat("_Speed",0);
         material.SetFloat("_Reset",1);
         material.SetFloat("_Decelleration",0);
         material.SetFloat("_Strength",0);
-        plane = new Plane(Vector3.forward, 0);
+        //plane = new Plane(Vector3.forward, 0);
     }
 
     private bool CanTouch(){
@@ -36,10 +36,10 @@ public class SimulationManager : MonoBehaviour
         fps.text = f.ToString() + " fps";
         if ( Input.GetMouseButton(0) && canReposition && CanTouch() ){
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (plane.Raycast(ray, out distance))
+
+            if (plane.Raycast(ray, out raycastHit, 10.0f))
             {
-                worldPosition = ray.GetPoint(distance);
-                material.SetVector("_GravityPoint",worldPosition);
+                material.SetVector("_GravityPoint",raycastHit.point);
             }
         }
     }
