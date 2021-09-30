@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Render
-  m_Shader: {fileID: 4800000, guid: a0160a65fbaa4ac4c998282949c8b4a8, type: 3}
+  m_Shader: {fileID: 4800000, guid: 13714cc0d298cd34b8c9c76aa205983a, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Buffer:
-        m_Texture: {fileID: 8600000, guid: 615de26f10e154934a2fc3a88f4ddde1, type: 2}
+        m_Texture: {fileID: 8400000, guid: a5365d4b22f132f4abc35b3ec68d6d8c, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -80,7 +80,7 @@ Material:
     - _Range: 10
     - _Reset: 0
     - _Scale: 100
-    - _Size: 1
+    - _Size: 10
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _Speed: 0.1
